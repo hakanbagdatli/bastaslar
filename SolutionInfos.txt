@@ -1,14 +1,4 @@
- <add name="con" connectionString="Data Source=213.159.7.73;Initial Catalog=raven_sunvalley;User ID=rsunvalley;Password=Liophin2024**" />
 
-
- https://sunvalleycyprus.com/raven/
-
- hakan@bastaslar.com
- 1234
-
-ftp:
-sunvalleycyp
-Sunvalley2024**
 
 /*
 DECLARE @SaleExecutiveId INT = 7 /*EÐER NULL ÝSE HEPSÝ*/

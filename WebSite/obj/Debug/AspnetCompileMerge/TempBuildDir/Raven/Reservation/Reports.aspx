@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-lg-6 mb-5">
                                 <label><%= Language.GetFixed("IlgiliPersonel") %>:</label>
-                                <select id="SaleExecutive" class="form-control form-data selectpicker" data-live-search="true" onchange="SelectedChange('SaleExecutive','GetSaleExecutiveAgency','AgencyID')">
+                                <select id="SaleExecutive" class="form-control form-data selectpicker" data-live-search="true" type="select" onchange="SelectedChange('SaleExecutive','GetSaleExecutiveAgency','AgencyID')">
                                     <option value="0"><%= Language.GetFixed("TumunuGor") %></option>
                                     <% List<Entities.zUsers> saleExecutiveList = Bll.zUsers.Select(0, filter: " AND CatID=1 AND Statu=5 AND Approved=1", sorting: " Name ASC");
                                         foreach (var items in saleExecutiveList) { %>
@@ -245,15 +245,19 @@
         /* fitrele */
         $(".btn-filter").on("click", function () {
             let filterURL = "";
-            $(".filter-data").each(function () {
-                let dataID = $(this).attr("id").toLowerCase();
+            // Include inputs with class filter-data and selects with class form-data
+            $(".filter-data, select.form-data").each(function () {
+                let dataID = ($(this).attr("id") || "").toLowerCase();
                 let dataValue = $(this).val();
-                let dataType = $(this).attr("type");
-                if (dataValue != null && dataValue != "") {
-                    if (dataType == "select" && dataValue != 0)
+                let isSelect = $(this).is('select');
+                if (dataID && dataValue != null && dataValue !== "") {
+                    if (isSelect) {
+                        if (dataValue != 0) {
+                            filterURL += dataID + "=" + dataValue + "&";
+                        }
+                    } else {
                         filterURL += dataID + "=" + dataValue + "&";
-                    else if (dataType != "select")
-                        filterURL += dataID + "=" + dataValue + "&";
+                    }
                 }
             });
             //------------------------------------------
