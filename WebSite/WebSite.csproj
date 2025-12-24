@@ -344,6 +344,7 @@
     <Content Include="Raven\Inspection\Attendees.aspx" />
     <Content Include="Raven\Inspection\List.aspx" />
     <Content Include="Raven\Reservation\Reports.aspx" />
+    <Content Include="Raven\Reservation\SalesExecutiveSummary.aspx" />
     <Content Include="Raven\Reservation\Summaries.aspx" />
     <Content Include="Raven\Exclusive\TaskList.aspx" />
     <Content Include="Raven\Reservation\Features.aspx" />
@@ -716,6 +717,13 @@
     </Compile>
     <Compile Include="Raven\Reservation\Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\SalesExecutiveSummary.aspx.cs">
+      <DependentUpon>SalesExecutiveSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\SalesExecutiveSummary.aspx.designer.cs">
+      <DependentUpon>SalesExecutiveSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Raven\Reservation\Summaries.aspx.cs">
       <DependentUpon>Summaries.aspx</DependentUpon>

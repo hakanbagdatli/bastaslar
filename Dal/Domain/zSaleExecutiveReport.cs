@@ -1,0 +1,138 @@
+﻿using System;
+using System.Linq;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+
+namespace Dal
+{
+    public class zSaleExecutiveReport : Base
+    {
+        public static int rowCountOfQuery;
+
+        public static List<Entities.zSaleExecutiveReport> Select(int rowCount, System.Data.CommandType _cmdType, IDictionary<string, object> _parmsVals, SqlConnection con, SqlTransaction tran, int? saleExecutiveID = null, string StartDate = null, string EndDate = null)
+        {
+            string _saleExecutiveID = "NULL";
+            string _startDate = "NULL";
+            string _endDate = "NULL";
+            //if saleexecıtive is not null then set it 
+            if (saleExecutiveID.ToString() != "0") _saleExecutiveID = saleExecutiveID.ToString();
+            if (StartDate != null) _startDate = "'" + StartDate + "'";
+            if (EndDate != null) _endDate = "'" + EndDate + "'";
+
+            //---------------------------------------------------------
+            string query = $@" 
+DECLARE @SaleExecutiveId INT = {_saleExecutiveID} /*EĞER NULL İSE HEPSİ*/
+DECLARE @StartDate DATETIME = {_startDate} /*EĞER NULL İSE HEPSİ '20250101'*/
+DECLARE @EndDate DATETIME = {_endDate} /*EĞER NULL İSE HEPSİ '20251231'*/
+SET dateformat dmy;
+/* 1. Bölüm: TOUCH (Arama/Callback) Verileri */
+WITH TouchData AS (
+    SELECT 
+        _SaleExecutive, 
+        COUNT(*) AS Touch 
+    FROM (
+        SELECT 
+             CLLB.*
+            ,AGN.Title AS _AgencyName
+            ,CLLB.CreatedUser AS _SaleExecutiveID
+            ,CONCAT(USR.Name, ' ', USR.Surname) AS _SaleExecutive
+        FROM AgencyCallbacks CLLB
+        LEFT JOIN Agencies AS AGN ON CLLB.AgencyID = AGN.id
+        LEFT JOIN zUsers AS USR ON CLLB.CreatedUser = USR.id
+        WHERE ISNULL(CLLB.isDeleted, 0) = 0
+    ) AS tbl
+    WHERE 1=1 AND (@SaleExecutiveId IS NULL OR _SaleExecutiveID = @SaleExecutiveId)
+    AND (@StartDate IS NULL OR @EndDate IS NULL OR CreatedDate BETWEEN @StartDate AND @EndDate)
+    GROUP BY _SaleExecutive
+),
+
+/* 2. Bölüm: COMPLETED & RESERVATION Verileri */
+ReservationData AS (
+    SELECT 
+        _SaleExecutive, 
+        SUM(CASE WHEN TurID = 1 THEN 1 ELSE 0 END) AS Completed, 
+        SUM(CASE WHEN ISNULL(TurID, 0) <> 1 THEN 1 ELSE 0 END) AS Reservation 
+    FROM (
+        SELECT 
+             RES.*
+            ,REC.Title AS _ProjectName
+            ,PLN.Title AS _PlanName
+            ,INS.PNRCode AS _InspectionNumber
+            ,AGN.Title AS _AgencyName, AGN.RelevantID AS _SaleExecutiveID
+            ,CONCAT(RUSR.Name, ' ', RUSR.Surname) AS _SaleExecutive
+            ,CUS.Name AS _CustomerName, CUS.Surname AS _CustomerSurname
+            ,STA.Title AS _Statu
+        FROM Reservations RES
+        LEFT JOIN Inspections AS INS ON RES.InspectionNumber = INS.id
+        LEFT JOIN GeneralRecords AS REC ON RES.ProjectID = REC.id
+        LEFT JOIN GeneralPlans AS PLN ON RES.PlanID = PLN.id
+        LEFT JOIN Agencies AS AGN ON RES.AgencyID = AGN.id
+        LEFT JOIN zUsers AS RUSR ON AGN.RelevantID = RUSR.id
+        LEFT JOIN Customers AS CUS ON RES.CustomerID = CUS.id
+        LEFT JOIN zDefineDetails AS STA ON RES.Statu = STA.id
+        WHERE ISNULL(RES.isDeleted, 0) = 0
+    ) AS tbl
+    WHERE 1=1 AND (@SaleExecutiveId IS NULL OR _SaleExecutiveID = @SaleExecutiveId)
+    AND (@StartDate IS NULL OR @EndDate IS NULL OR  CreatedDate BETWEEN @StartDate AND @EndDate)
+    GROUP BY _SaleExecutive
+),
+
+/* 3. Bölüm: INSPECTION & PROPERTY VIEW Verileri */
+InspectionData AS (
+    SELECT 
+        _SaleExecutive, 
+        SUM(CASE WHEN ISNULL(TurID, 0) = 0 THEN 1 ELSE 0 END) AS Inspection, 
+        SUM(CASE WHEN ISNULL(TurID, 0) = 1 THEN 1 ELSE 0 END) AS PropertyView 
+    FROM (
+        SELECT 
+             ISP.*
+            ,AGN.Title AS _AgencyName, AGN.RelevantID AS _SaleExecutiveID
+            ,CONCAT(USR.Name, ' ', USR.Surname) AS _SaleExecutive
+            ,STA.Title AS _Statu
+            ,MRM.Title AS _MeetingRoom
+        FROM Inspections ISP
+        LEFT JOIN Agencies AS AGN ON ISP.AgencyID = AGN.id
+        LEFT JOIN zUsers AS USR ON AGN.RelevantID = USR.id
+        LEFT JOIN zDefineDetails AS STA ON ISP.Statu = STA.id
+        LEFT JOIN zDefineDetails AS MRM ON ISP.MeetingRoomID = MRM.id
+        WHERE ISNULL(ISP.isDeleted, 0) = 0
+    ) AS tbl
+    WHERE 1=1 AND (@SaleExecutiveId IS NULL OR _SaleExecutiveID = @SaleExecutiveId)
+    AND (@StartDate IS NULL OR @EndDate IS NULL OR CreatedDate BETWEEN @StartDate AND @EndDate)
+    GROUP BY _SaleExecutive
+)
+
+/* SONUÇ: Tabloları Birleştirme */
+SELECT 
+    COALESCE(T._SaleExecutive, R._SaleExecutive, I._SaleExecutive) AS SalesExecutive,
+    ISNULL(T.Touch, 0) AS Touch,
+    ISNULL(R.Completed, 0) AS Completed,
+    ISNULL(R.Reservation, 0) AS Reservation,
+    ISNULL(I.Inspection, 0) AS Inspection,
+    ISNULL(I.PropertyView, 0) AS PropertyView
+
+FROM TouchData T
+FULL OUTER JOIN ReservationData R ON T._SaleExecutive = R._SaleExecutive
+FULL OUTER JOIN InspectionData I ON COALESCE(T._SaleExecutive, R._SaleExecutive) = I._SaleExecutive
+
+-- Sıralama
+ORDER BY SalesExecutive;";
+
+            string[] keys = null;
+            object[] vals = null;
+            if (_parmsVals != null)
+            {
+                keys = _parmsVals.Keys.ToArray();
+                vals = _parmsVals.Values.ToArray();
+            }
+            //---------------------------------------------------------
+            //---------------------------------------------------------
+            //---------------------------------------------------------
+            List<Entities.zSaleExecutiveReport> dataList = new List<Entities.zSaleExecutiveReport>();
+            Entities.zSaleExecutiveReport data = new Entities.zSaleExecutiveReport();
+            dataList = SelectAnonyMous<Entities.zSaleExecutiveReport>(data, query, _cmdType, keys, vals, con, tran);
+            return dataList;
+        }
+    }
+}
+

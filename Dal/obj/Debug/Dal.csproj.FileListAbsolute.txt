@@ -75,3 +75,14 @@ C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Dal\obj\Debug\Dal.csproj.CoreC
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Dal\obj\Debug\Dal.csproj.Up2Date
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Dal\obj\Debug\Dal.dll
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Dal\obj\Debug\Dal.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\bin\Debug\Dal.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\bin\Debug\Dal.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\bin\Debug\Entities.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\bin\Debug\Utility.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\bin\Debug\Entities.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\bin\Debug\Utility.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\obj\Debug\Dal.csproj.AssemblyReference.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\obj\Debug\Dal.csproj.Up2Date
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\obj\Debug\Dal.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Dal\obj\Debug\Dal.pdb

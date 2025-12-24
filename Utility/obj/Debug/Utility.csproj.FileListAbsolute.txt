@@ -61,3 +61,12 @@ C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Utility\obj\Debug\Utility.cspr
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Utility\obj\Debug\Utility.csproj.Up2Date
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Utility\obj\Debug\Utility.dll
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Utility\obj\Debug\Utility.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\bin\Debug\Utility.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\bin\Debug\Utility.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\bin\Debug\Entities.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\bin\Debug\Entities.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\obj\Debug\Utility.csproj.Up2Date
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\obj\Debug\Utility.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Utility\obj\Debug\Utility.pdb

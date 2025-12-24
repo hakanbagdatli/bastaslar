@@ -348,6 +348,8 @@ namespace Tools
                     return "/partner/my-profile";
                 case "pleads":
                     return "/partner/agency-leads";
+                case "sales-executive-summary":
+                    return "/raven/sales-executive-summary";
                 default:
                     return "";
             }

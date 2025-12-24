@@ -121,7 +121,8 @@ namespace Utility
             {
                 if (!String.IsNullOrEmpty(date))
                 {
-                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd");
+                    //date = Convert.ToDateTime(date).ToString("yyyy-MM-dd"); YUNUS
+                    date = Convert.ToDateTime(date).ToString("yyyyMMdd"); //SEM
                 }
                 return date;
             }

@@ -39,3 +39,9 @@ C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Entities\obj\Debug\Entities.cs
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Entities\obj\Debug\Entities.dll
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Entities\obj\Debug\Entities.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Entities\bin\Debug\Entities.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Entities\bin\Debug\Entities.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Entities\obj\Debug\Entities.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Entities\obj\Debug\Entities.pdb

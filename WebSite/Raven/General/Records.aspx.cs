@@ -13,7 +13,7 @@ namespace WebSite.Raven.General
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Developer.CheckLogin("Editor", 23);
+            Developer.CheckLogin("Sales", 23);
             PageProperties(Language.GetFixed("IcerikYonetimi"), 4);
         }
         //--------------------------------------------------------- pageLoad işlemleri

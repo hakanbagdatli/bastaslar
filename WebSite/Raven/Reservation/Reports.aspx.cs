@@ -60,13 +60,19 @@ namespace WebSite.Raven.Reservation
             if (Request["startdate"] != null)
             {
                 StartDate = Request["startdate"];
-                ResWhereClause += " AND TRY_CONVERT(datetime, ReservationDate, 104) BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
-                SalWhereClause += " AND TRY_CONVERT(datetime, ContractofSigning, 104) BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
-                InsWhereClause += " AND TRY_CONVERT(datetime, PresentationDate, 104) BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
+                var startDateSqlDateFormat = Helper.SQLDateFormat(StartDate);
+                //ResWhereClause += " AND TRY_CONVERT(datetime, ReservationDate, 104) BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
+                //SalWhereClause += " AND TRY_CONVERT(datetime, ContractofSigning, 104) BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
+                //InsWhereClause += " AND TRY_CONVERT(datetime, PresentationDate, 104) BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
+                ResWhereClause += " AND ReservationDate BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
+                SalWhereClause += " AND ContractofSigning BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
+                InsWhereClause += " AND PresentationDate BETWEEN '" + Helper.SQLDateFormat(StartDate) + "'";
             }
             //---------------------------------------------------------
-            if (Request["enddate"] != null) { 
+            if (Request["enddate"] != null)
+            {
                 EndDate = Request["enddate"];
+                var endDateSqlDateFormat = Helper.SQLDateFormat(Convert.ToDateTime(EndDate).AddDays(1).ToString());
                 ResWhereClause += " AND '" + Helper.SQLDateFormat(Convert.ToDateTime(EndDate).AddDays(1).ToString()) + "'";
                 SalWhereClause += " AND '" + Helper.SQLDateFormat(Convert.ToDateTime(EndDate).AddDays(1).ToString()) + "'";
                 InsWhereClause += " AND '" + Helper.SQLDateFormat(Convert.ToDateTime(EndDate).AddDays(1).ToString()) + "'";
@@ -115,11 +121,11 @@ namespace WebSite.Raven.Reservation
         {
             double ContractAmount = Helper.MoneytoDouble(Contract);
             double PaidAmount = Helper.MoneytoDouble(Paid);
-            return Helper.MoneyFormat(ContractAmount  - PaidAmount);
+            return Helper.MoneyFormat(ContractAmount - PaidAmount);
         }
         //---------------------------------------------------------
 
-        public static string ReservationCount(string Type, string Clause) 
+        public static string ReservationCount(string Type, string Clause)
         {
             string SqlString = @"SELECT COUNT(id) AS TotalCount, 
                                        SUM(CONVERT(float, REPLACE(REPLACE(ContractPrice, '.', ''), ',', '.'))) AS TotalAmount 
@@ -127,7 +133,7 @@ namespace WebSite.Raven.Reservation
             DataTable dt = Bll.Reservations.GetDataTable(SqlString, CommandType.Text, null, null);
             if (dt.Rows.Count > 0)
                 return dt.Rows[0]["TotalCount"].ToString() + "~" + string.Format("{0:C2}", dt.Rows[0]["TotalAmount"]).Replace("£", "");
-            else 
+            else
                 return "0~0";
         }
         //---------------------------------------------------------

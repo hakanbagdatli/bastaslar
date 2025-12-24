@@ -163,7 +163,8 @@ namespace WebSite
                 { "inspection-list", "~/Raven/Inspection/List.aspx"},
                 { "leads", "~/Raven/Inspection/Leads.aspx"},
                 { "attendees", "~/Raven/Inspection/Attendees.aspx"},
-                { "calendar", "~/Raven/Inspection/Calendar.aspx"}
+                { "calendar", "~/Raven/Inspection/Calendar.aspx"},
+                { "sales-executive-summary", "~/Raven/Reservation/SalesExecutiveSummary.aspx"}
             };
             //---------------------------------------------------------
             foreach (var route in adminRoutes)

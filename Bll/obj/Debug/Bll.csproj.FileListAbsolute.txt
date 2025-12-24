@@ -89,3 +89,16 @@ C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Bll\obj\Debug\Bll.csproj.CoreC
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Bll\obj\Debug\Bll.csproj.Up2Date
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Bll\obj\Debug\Bll.dll
 C:\inetpub\wwwroot\AtaBilisim\sunvalleycyprus.com\Bll\obj\Debug\Bll.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Bll.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Bll.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Dal.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Entities.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Utility.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Dal.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Entities.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\bin\Debug\Utility.pdb
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\obj\Debug\Bll.csproj.AssemblyReference.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\obj\Debug\Bll.csproj.CoreCompileInputs.cache
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\obj\Debug\Bll.csproj.Up2Date
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\obj\Debug\Bll.dll
+E:\Seha\VS\sunvalleycyprus.com_Yunus\Bll\obj\Debug\Bll.pdb

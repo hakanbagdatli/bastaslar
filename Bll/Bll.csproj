@@ -81,6 +81,7 @@
     <Compile Include="Domain\zMenus.cs" />
     <Compile Include="Domain\zPageTypes.cs" />
     <Compile Include="Domain\zPhotoSettings.cs" />
+    <Compile Include="Domain\zSaleExecutiveReport.cs" />
     <Compile Include="Domain\zSearchEngineIndex.cs" />
     <Compile Include="Domain\zSettings.cs" />
     <Compile Include="Domain\zSortingType.cs" />
