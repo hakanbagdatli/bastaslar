@@ -1,0 +1,1153 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F795F24-09FE-43F8-8C9B-6A2C7705C13A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSite</RootNamespace>
+    <AssemblyName>WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44386</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExcelDataReader, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.7.0\lib\net462\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=12.2.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Doc.12.2.0\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Xceed.Document.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.4.0.25105.5786\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Drawing.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.4.0.25105.5786\lib\net40\Xceed.Drawing.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.4.0.25105.5786\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="404.aspx" />
+    <Content Include="About.aspx" />
+    <Content Include="AjaxRequest.asmx" />
+    <Content Include="assets\css\ace-responsive-menu.css" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap-select.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\dashbord_navitaion.css" />
+    <Content Include="assets\css\flaticon.css" />
+    <Content Include="assets\css\fontawesome.css" />
+    <Content Include="assets\css\googlemap.css" />
+    <Content Include="assets\css\jquery-ui.min.css" />
+    <Content Include="assets\css\lightbox\close.png" />
+    <Content Include="assets\css\lightbox\loading.gif" />
+    <Content Include="assets\css\lightbox\next.png" />
+    <Content Include="assets\css\lightbox\prev.png" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\menu.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\slider.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\sunvalley.css" />
+    <Content Include="assets\css\ud-custom-spacing.css" />
+    <Content Include="assets\images\flags\ar.png" />
+    <Content Include="assets\images\flags\bg.png" />
+    <Content Include="assets\images\flags\br.png" />
+    <Content Include="assets\images\flags\de.png" />
+    <Content Include="assets\images\flags\en.png" />
+    <Content Include="assets\images\flags\es.png" />
+    <Content Include="assets\images\flags\fr.png" />
+    <Content Include="assets\images\flags\hr.png" />
+    <Content Include="assets\images\flags\it.png" />
+    <Content Include="assets\images\flags\ja.png" />
+    <Content Include="assets\images\flags\ko.png" />
+    <Content Include="assets\images\flags\main.png" />
+    <Content Include="assets\images\flags\pt.png" />
+    <Content Include="assets\images\flags\ro.png" />
+    <Content Include="assets\images\flags\ru.png" />
+    <Content Include="assets\images\flags\zn.png" />
+    <Content Include="assets\fonts\flaticon_realton.svg" />
+    <Content Include="assets\images\about-01.jpg" />
+    <Content Include="assets\images\about-02.jpg" />
+    <Content Include="assets\images\background\about-page-bg.jpg" />
+    <Content Include="assets\images\background\compare-bg.jpg" />
+    <Content Include="assets\images\background\cta-bg-1.jpg" />
+    <Content Include="assets\images\dark-nav-icon.svg" />
+    <Content Include="assets\images\email.png" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\header-logo.svg" />
+    <Content Include="assets\images\header-logo2.svg" />
+    <Content Include="assets\images\header-logo3.svg" />
+    <Content Include="assets\images\home\footer-bg-6.jpg" />
+    <Content Include="assets\images\home\home-1.jpg" />
+    <Content Include="assets\images\home\home-10.jpg" />
+    <Content Include="assets\images\home\home-2.jpg" />
+    <Content Include="assets\images\home\home-3.jpg" />
+    <Content Include="assets\images\home\home-4.jpg" />
+    <Content Include="assets\images\home\home-5-1.jpg" />
+    <Content Include="assets\images\home\home-5-2.jpg" />
+    <Content Include="assets\images\home\home-5-3.jpg" />
+    <Content Include="assets\images\home\home-5-4.jpg" />
+    <Content Include="assets\images\home\home-6.jpg" />
+    <Content Include="assets\images\home\home-8.jpg" />
+    <Content Include="assets\images\home\home-9.jpg" />
+    <Content Include="assets\images\icon\error-page-img.svg" />
+    <Content Include="assets\images\icon\login-page-icon.svg" />
+    <Content Include="assets\images\icon\london.svg" />
+    <Content Include="assets\images\icon\nav-icon-dark.svg" />
+    <Content Include="assets\images\icon\nav-icon-white.svg" />
+    <Content Include="assets\images\icon\new-york.svg" />
+    <Content Include="assets\images\icon\paris.svg" />
+    <Content Include="assets\images\icon\pricing-icon-1.svg" />
+    <Content Include="assets\images\icon\pricing-icon-2.svg" />
+    <Content Include="assets\images\icon\pricing-icon-3.svg" />
+    <Content Include="assets\images\icon\property-buy-2.svg" />
+    <Content Include="assets\images\icon\property-buy.svg" />
+    <Content Include="assets\images\icon\property-rent-2.svg" />
+    <Content Include="assets\images\icon\property-rent.svg" />
+    <Content Include="assets\images\icon\property-sell-2.svg" />
+    <Content Include="assets\images\icon\property-sell.svg" />
+    <Content Include="assets\images\icon\range-slider-range-bg-line.svg" />
+    <Content Include="assets\images\icon\register-page-icon.svg" />
+    <Content Include="assets\images\logo-dark.png" />
+    <Content Include="assets\images\logo-white.png" />
+    <Content Include="assets\images\logo.svg" />
+    <Content Include="assets\images\mobile-dark-nav-icon.svg" />
+    <Content Include="assets\images\placeholder.png" />
+    <Content Include="assets\images\preloader.gif" />
+    <Content Include="assets\images\slide-01.jpg" />
+    <Content Include="assets\images\slide-02.jpg" />
+    <Content Include="assets\images\telephone.png" />
+    <Content Include="assets\js\ace-responsive-menu.js" />
+    <Content Include="assets\js\bootstrap-select.min.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chart-custome.js" />
+    <Content Include="assets\js\chart.min.js" />
+    <Content Include="assets\js\dashboard-script.js" />
+    <Content Include="assets\js\infobox.min.js" />
+    <Content Include="assets\js\isotop.js" />
+    <Content Include="assets\js\jquery-3.6.4.min.js" />
+    <Content Include="assets\js\jquery-migrate-3.0.0.min.js" />
+    <Content Include="assets\js\jquery-scrolltofixed-min.js" />
+    <Content Include="assets\js\jquery.counterup.js" />
+    <Content Include="assets\js\jquery.mmenu.all.js" />
+    <Content Include="assets\js\maps.js" />
+    <Content Include="assets\js\markerclusterer.js" />
+    <Content Include="assets\js\owl.js" />
+    <Content Include="assets\js\parallax.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\pricing-slider.js" />
+    <Content Include="assets\js\pricing-table.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\scrollbalance.js" />
+    <Content Include="assets\js\swiper.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="assets\vendor\app.data.js" />
+    <Content Include="assets\vendor\app.forms.js" />
+    <Content Include="assets\vendor\app.js" />
+    <Content Include="assets\vendor\page.checkout.js" />
+    <Content Include="assets\vendor\app.profile.js" />
+    <Content Include="assets\vendor\app.login.js" />
+    <Content Include="assets\vendor\app.popup.js" />
+    <Content Include="assets\vendor\app.search.js" />
+    <Content Include="assets\vendor\shop.filter.js" />
+    <Content Include="assets\vendor\sweetalert.min.js" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Partner\Announcements.aspx" />
+    <Content Include="Partner\Calendar.aspx" />
+    <Content Include="Partner\Agency.aspx" />
+    <Content Include="Partner\DailyReports.aspx" />
+    <Content Include="Partner\Documents.aspx" />
+    <Content Include="Partner\Presentation.aspx" />
+    <Content Include="Partner\Profile.aspx" />
+    <Content Include="Partner\Reservations.aspx" />
+    <Content Include="Partner\Status.aspx" />
+    <Content Include="Partner\Leads.aspx" />
+    <Content Include="Partner\Summaries.aspx" />
+    <Content Include="Partner\Tasks.aspx" />
+    <Content Include="Partner\Customers.aspx" />
+    <Content Include="Partner\Default.aspx" />
+    <Content Include="Partner\Inspections.aspx" />
+    <Content Include="Partner\MarketInsights.aspx" />
+    <Content Include="Partner\Projects.aspx" />
+    <Content Include="Partner\Shared\Header.ascx" />
+    <Content Include="Partner\Shared\SubHeader.ascx" />
+    <Content Include="ProductDetail.aspx" />
+    <Content Include="Products.aspx" />
+    <Content Include="Raven\assets\css\custom.css" />
+    <Content Include="Raven\assets\css\datatables.bundle.css" />
+    <Content Include="Raven\assets\css\fancybox.css" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-brands-400.svg" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-regular-400.svg" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-solid-900.svg" />
+    <Content Include="Raven\assets\css\fonts\flaticon2\Flaticon2.svg" />
+    <Content Include="Raven\assets\css\fonts\flaticon\Flaticon.svg" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\ki.css" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\ki.min.rtl.css" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\ki.rtl.css" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\Ki.svg" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-brands-400.svg" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-regular-400.svg" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-solid-900.svg" />
+    <Content Include="Raven\assets\css\fonts\socicon\socicon.svg" />
+    <Content Include="Raven\assets\css\fullcalendar.bundle.css" />
+    <Content Include="Raven\assets\css\page.login.css" />
+    <Content Include="Raven\assets\css\plugins.bundle.css" />
+    <Content Include="Raven\assets\css\prismjs.bundle.css" />
+    <Content Include="Raven\assets\css\style.bundle.css" />
+    <Content Include="Raven\assets\css\sumoselect.min.css" />
+    <Content Include="Raven\assets\flags\ar.svg" />
+    <Content Include="Raven\assets\flags\de.svg" />
+    <Content Include="Raven\assets\flags\en.svg" />
+    <Content Include="Raven\assets\flags\es.svg" />
+    <Content Include="Raven\assets\flags\fr.svg" />
+    <Content Include="Raven\assets\flags\it.svg" />
+    <Content Include="Raven\assets\flags\ja.svg" />
+    <Content Include="Raven\assets\flags\pt.svg" />
+    <Content Include="Raven\assets\flags\ru.svg" />
+    <Content Include="Raven\assets\flags\tr.svg" />
+    <Content Include="Raven\assets\flags\zh.svg" />
+    <Content Include="Raven\assets\js\datatables.bundle.js" />
+    <Content Include="Raven\assets\js\fancybox.js" />
+    <Content Include="Raven\assets\js\fullcalendar.bundle.js" />
+    <Content Include="Raven\assets\js\fullcalendar.locales.js" />
+    <Content Include="Raven\assets\js\jquery.mask.js" />
+    <Content Include="Raven\assets\js\jquery.sumoselect.min.js" />
+    <Content Include="Raven\assets\js\page.login.js" />
+    <Content Include="Raven\assets\js\plugins.bundle.js" />
+    <Content Include="Raven\assets\js\prismjs.bundle.js" />
+    <Content Include="Raven\assets\js\scripts.bundle.js" />
+    <Content Include="Raven\assets\js\session-timeout.js" />
+    <Content Include="Raven\assets\js\summernote-cleaner.js" />
+    <Content Include="Raven\assets\js\summernote.init.js" />
+    <Content Include="Raven\assets\js\tagify.js" />
+    <Content Include="Raven\assets\media\error\bg1.jpg" />
+    <Content Include="Raven\assets\media\error\bg2.jpg" />
+    <Content Include="Raven\assets\media\error\bg3.jpg" />
+    <Content Include="Raven\assets\media\error\bg4.jpg" />
+    <Content Include="Raven\assets\media\error\bg5.jpg" />
+    <Content Include="Raven\assets\media\error\bg6.jpg" />
+    <Content Include="Raven\assets\media\favicon.png" />
+    <Content Include="Raven\assets\media\female.svg" />
+    <Content Include="Raven\assets\media\files\0.svg" />
+    <Content Include="Raven\assets\media\files\1.svg" />
+    <Content Include="Raven\assets\media\files\2.svg" />
+    <Content Include="Raven\assets\media\files\3.svg" />
+    <Content Include="Raven\assets\media\files\4.svg" />
+    <Content Include="Raven\assets\media\files\5.svg" />
+    <Content Include="Raven\assets\media\files\6.svg" />
+    <Content Include="Raven\assets\media\files\7.svg" />
+    <Content Include="Raven\assets\media\files\css.svg" />
+    <Content Include="Raven\assets\media\files\csv.svg" />
+    <Content Include="Raven\assets\media\files\html.svg" />
+    <Content Include="Raven\assets\media\files\javascript.svg" />
+    <Content Include="Raven\assets\media\files\mp4.svg" />
+    <Content Include="Raven\assets\media\files\xml.svg" />
+    <Content Include="Raven\assets\media\intro.jpg" />
+    <Content Include="Raven\assets\media\login.mp4" />
+    <Content Include="Raven\assets\media\logo-dark.png" />
+    <Content Include="Raven\assets\media\logo-white.png" />
+    <Content Include="Raven\assets\media\logo.png" />
+    <Content Include="Raven\assets\media\male.svg" />
+    <Content Include="Raven\assets\media\more.gif" />
+    <Content Include="Raven\assets\media\projects.jpg" />
+    <Content Include="Raven\assets\media\properties.jpg" />
+    <Content Include="Raven\assets\media\taieri.svg" />
+    <Content Include="Raven\assets\vendors\app.delete.js" />
+    <Content Include="Raven\assets\vendors\app.global.js" />
+    <Content Include="Raven\assets\vendors\app.login.js" />
+    <Content Include="Raven\assets\vendors\app.save.js" />
+    <Content Include="Raven\assets\vendors\page.daily.js" />
+    <Content Include="Raven\assets\vendors\page.inspections.js" />
+    <Content Include="Raven\assets\vendors\page.projects.js" />
+    <Content Include="Raven\Common\Banners.aspx" />
+    <Content Include="Raven\Common\Contacts.aspx" />
+    <Content Include="Raven\Common\Defines.aspx" />
+    <Content Include="Raven\Common\DefinesOptions.aspx" />
+    <Content Include="Raven\Common\Inbox.aspx" />
+    <Content Include="Raven\Exclusive\Agencies.aspx" />
+    <Content Include="Raven\Exclusive\AgencyCallbacks.aspx" />
+    <Content Include="Raven\Exclusive\Brokers.aspx" />
+    <Content Include="Raven\Exclusive\CustomerFiles.aspx" />
+    <Content Include="Raven\Exclusive\Customers.aspx" />
+    <Content Include="Raven\Exclusive\DailyReports.aspx" />
+    <Content Include="Raven\Exclusive\Preview.aspx" />
+    <Content Include="Raven\Exclusive\Status.aspx" />
+    <Content Include="Raven\General\Plans.aspx" />
+    <Content Include="Raven\Inspection\Leads.aspx" />
+    <Content Include="Raven\Inspection\Calendar.aspx" />
+    <Content Include="Raven\Inspection\Attendees.aspx" />
+    <Content Include="Raven\Inspection\List.aspx" />
+    <Content Include="Raven\Reservation\Reports.aspx" />
+    <Content Include="Raven\Reservation\Summaries.aspx" />
+    <Content Include="Raven\Exclusive\TaskList.aspx" />
+    <Content Include="Raven\Reservation\Features.aspx" />
+    <Content Include="Raven\Reservation\Files.aspx" />
+    <Content Include="Raven\Reservation\List.aspx" />
+    <Content Include="Raven\Reservation\Preview.aspx" />
+    <Content Include="Raven\Reservation\Transactions.aspx" />
+    <Content Include="Raven\Settings\Operation.aspx" />
+    <Content Include="Raven\Dashboard.aspx" />
+    <Content Include="Raven\Default.aspx" />
+    <Content Include="Raven\General\Categories.aspx" />
+    <Content Include="Raven\General\Features.aspx" />
+    <Content Include="Raven\General\Files.aspx" />
+    <Content Include="Raven\General\Gallery.aspx" />
+    <Content Include="Raven\General\Records.aspx" />
+    <Content Include="Raven\General\Videos.aspx" />
+    <Content Include="Raven\Logout.aspx" />
+    <Content Include="Raven\Requests.asmx" />
+    <Content Include="Raven\Seo\General.aspx" />
+    <Content Include="Raven\Seo\Redirection.aspx" />
+    <Content Include="Raven\Settings\General.aspx" />
+    <Content Include="Raven\Settings\Languages.aspx" />
+    <Content Include="Raven\Settings\MenuContents.aspx" />
+    <Content Include="Raven\Settings\PageTypes.aspx" />
+    <Content Include="Raven\Settings\PhotoSizes.aspx" />
+    <Content Include="Raven\Shared\Header.ascx" />
+    <Content Include="Raven\Shared\Sidebar.ascx" />
+    <Content Include="Raven\Shared\SubHeader.ascx" />
+    <Content Include="Raven\assets\standart.html" />
+    <Content Include="Raven\Translate\Categories.aspx" />
+    <Content Include="Raven\Translate\Records.aspx" />
+    <Content Include="Raven\Users\List.aspx" />
+    <Content Include="Raven\Users\Profile.aspx" />
+    <Content Include="RecordDetail.aspx" />
+    <Content Include="Records.aspx" />
+    <Content Include="Shared\JobApplication.ascx" />
+    <Content Include="Shared\LeaseFilter.ascx" />
+    <Content Include="Shared\PageHeader.ascx" />
+    <Content Include="Shared\RightAside.ascx" />
+    <Content Include="Sitemap.aspx" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxRequest.asmx.cs">
+      <DependentUpon>AjaxRequest.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Layout.Master.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layout.Master.designer.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Announcements.aspx.cs">
+      <DependentUpon>Announcements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Announcements.aspx.designer.cs">
+      <DependentUpon>Announcements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Agency.aspx.cs">
+      <DependentUpon>Agency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Agency.aspx.designer.cs">
+      <DependentUpon>Agency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\DailyReports.aspx.cs">
+      <DependentUpon>DailyReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\DailyReports.aspx.designer.cs">
+      <DependentUpon>DailyReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Documents.aspx.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Documents.aspx.designer.cs">
+      <DependentUpon>Documents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Presentation.aspx.cs">
+      <DependentUpon>Presentation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Presentation.aspx.designer.cs">
+      <DependentUpon>Presentation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Reservations.aspx.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Reservations.aspx.designer.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Leads.aspx.cs">
+      <DependentUpon>Leads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Leads.aspx.designer.cs">
+      <DependentUpon>Leads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Summaries.aspx.cs">
+      <DependentUpon>Summaries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Summaries.aspx.designer.cs">
+      <DependentUpon>Summaries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Tasks.aspx.cs">
+      <DependentUpon>Tasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Tasks.aspx.designer.cs">
+      <DependentUpon>Tasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Inspections.aspx.cs">
+      <DependentUpon>Inspections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Inspections.aspx.designer.cs">
+      <DependentUpon>Inspections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\MarketInsights.aspx.cs">
+      <DependentUpon>MarketInsights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\MarketInsights.aspx.designer.cs">
+      <DependentUpon>MarketInsights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Shared\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Shared\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\Shared\SubHeader.ascx.cs">
+      <DependentUpon>SubHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\Shared\SubHeader.ascx.designer.cs">
+      <DependentUpon>SubHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Common\Banners.aspx.cs">
+      <DependentUpon>Banners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Common\Banners.aspx.designer.cs">
+      <DependentUpon>Banners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Common\Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Common\Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Common\Defines.aspx.cs">
+      <DependentUpon>Defines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Common\Defines.aspx.designer.cs">
+      <DependentUpon>Defines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Common\DefinesOptions.aspx.cs">
+      <DependentUpon>DefinesOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Common\DefinesOptions.aspx.designer.cs">
+      <DependentUpon>DefinesOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Common\Inbox.aspx.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Common\Inbox.aspx.designer.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Agencies.aspx.cs">
+      <DependentUpon>Agencies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Agencies.aspx.designer.cs">
+      <DependentUpon>Agencies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\AgencyCallbacks.aspx.cs">
+      <DependentUpon>AgencyCallbacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\AgencyCallbacks.aspx.designer.cs">
+      <DependentUpon>AgencyCallbacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Brokers.aspx.cs">
+      <DependentUpon>Brokers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Brokers.aspx.designer.cs">
+      <DependentUpon>Brokers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\CustomerFiles.aspx.cs">
+      <DependentUpon>CustomerFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\CustomerFiles.aspx.designer.cs">
+      <DependentUpon>CustomerFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\DailyReports.aspx.cs">
+      <DependentUpon>DailyReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\DailyReports.aspx.designer.cs">
+      <DependentUpon>DailyReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Plans.aspx.cs">
+      <DependentUpon>Plans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Plans.aspx.designer.cs">
+      <DependentUpon>Plans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Inspection\Leads.aspx.cs">
+      <DependentUpon>Leads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Inspection\Leads.aspx.designer.cs">
+      <DependentUpon>Leads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Inspection\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Inspection\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Inspection\Attendees.aspx.cs">
+      <DependentUpon>Attendees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Inspection\Attendees.aspx.designer.cs">
+      <DependentUpon>Attendees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Inspection\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Inspection\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\Summaries.aspx.cs">
+      <DependentUpon>Summaries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\Summaries.aspx.designer.cs">
+      <DependentUpon>Summaries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Exclusive\TaskList.aspx.cs">
+      <DependentUpon>TaskList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Exclusive\TaskList.aspx.designer.cs">
+      <DependentUpon>TaskList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\Features.aspx.cs">
+      <DependentUpon>Features.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\Features.aspx.designer.cs">
+      <DependentUpon>Features.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\Files.aspx.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\Files.aspx.designer.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Reservation\Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Reservation\Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Settings\Operation.aspx.cs">
+      <DependentUpon>Operation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Settings\Operation.aspx.designer.cs">
+      <DependentUpon>Operation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Features.aspx.cs">
+      <DependentUpon>Features.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Features.aspx.designer.cs">
+      <DependentUpon>Features.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Files.aspx.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Files.aspx.designer.cs">
+      <DependentUpon>Files.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Records.aspx.cs">
+      <DependentUpon>Records.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Records.aspx.designer.cs">
+      <DependentUpon>Records.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\General\Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\General\zUploader.ashx.cs">
+      <DependentUpon>zUploader.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Requests.asmx.cs">
+      <DependentUpon>Requests.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raven\Seo\General.aspx.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Seo\General.aspx.designer.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Seo\Redirection.aspx.cs">
+      <DependentUpon>Redirection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Seo\Redirection.aspx.designer.cs">
+      <DependentUpon>Redirection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Settings\General.aspx.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Settings\General.aspx.designer.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Settings\Languages.aspx.cs">
+      <DependentUpon>Languages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Settings\Languages.aspx.designer.cs">
+      <DependentUpon>Languages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Settings\MenuContents.aspx.cs">
+      <DependentUpon>MenuContents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Settings\MenuContents.aspx.designer.cs">
+      <DependentUpon>MenuContents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Settings\PageTypes.aspx.cs">
+      <DependentUpon>PageTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Settings\PageTypes.aspx.designer.cs">
+      <DependentUpon>PageTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Settings\PhotoSizes.aspx.cs">
+      <DependentUpon>PhotoSizes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Settings\PhotoSizes.aspx.designer.cs">
+      <DependentUpon>PhotoSizes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Shared\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Shared\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Shared\Sidebar.ascx.cs">
+      <DependentUpon>Sidebar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Shared\Sidebar.ascx.designer.cs">
+      <DependentUpon>Sidebar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Shared\SubHeader.ascx.cs">
+      <DependentUpon>SubHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Shared\SubHeader.ascx.designer.cs">
+      <DependentUpon>SubHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Translate\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Translate\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Translate\Records.aspx.cs">
+      <DependentUpon>Records.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Translate\Records.aspx.designer.cs">
+      <DependentUpon>Records.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Users\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Users\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raven\Users\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raven\Users\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordDetail.aspx.cs">
+      <DependentUpon>RecordDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecordDetail.aspx.designer.cs">
+      <DependentUpon>RecordDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Records.aspx.cs">
+      <DependentUpon>Records.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Records.aspx.designer.cs">
+      <DependentUpon>Records.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\JobApplication.ascx.cs">
+      <DependentUpon>JobApplication.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\JobApplication.ascx.designer.cs">
+      <DependentUpon>JobApplication.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\LeaseFilter.ascx.cs">
+      <DependentUpon>LeaseFilter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\LeaseFilter.ascx.designer.cs">
+      <DependentUpon>LeaseFilter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PageHeader.ascx.cs">
+      <DependentUpon>PageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PageHeader.ascx.designer.cs">
+      <DependentUpon>PageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\RightAside.ascx.cs">
+      <DependentUpon>RightAside.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\RightAside.ascx.designer.cs">
+      <DependentUpon>RightAside.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitemap.aspx.cs">
+      <DependentUpon>Sitemap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitemap.aspx.designer.cs">
+      <DependentUpon>Sitemap.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Raven\assets\language.json" />
+    <Content Include="Raven\General\zUploader.ashx" />
+    <Content Include="Raven\Page.Master" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-brands-400.eot" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-brands-400.ttf" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-brands-400.woff" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-brands-400.woff2" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-regular-400.eot" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-regular-400.ttf" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-regular-400.woff" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-regular-400.woff2" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-solid-900.eot" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-solid-900.ttf" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-solid-900.woff" />
+    <Content Include="Raven\assets\css\fonts\%40fortawesome\fa-solid-900.woff2" />
+    <Content Include="Raven\assets\css\fonts\flaticon2\Flaticon2.eot" />
+    <Content Include="Raven\assets\css\fonts\flaticon2\Flaticon2.ttf" />
+    <Content Include="Raven\assets\css\fonts\flaticon2\Flaticon2.woff" />
+    <Content Include="Raven\assets\css\fonts\flaticon2\Flaticon2.woff2" />
+    <Content Include="Raven\assets\css\fonts\flaticon\Flaticon.eot" />
+    <Content Include="Raven\assets\css\fonts\flaticon\Flaticon.ttf" />
+    <Content Include="Raven\assets\css\fonts\flaticon\Flaticon.woff" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\Ki.eot" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\Ki.ttf" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\Ki.woff" />
+    <Content Include="Raven\assets\css\fonts\keenthemes-icons\Ki.woff2" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-brands-400.eot" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-brands-400.ttf" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-brands-400.woff" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-brands-400.woff2" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-regular-400.eot" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-regular-400.ttf" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-regular-400.woff" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-regular-400.woff2" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-solid-900.eot" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-solid-900.ttf" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-solid-900.woff" />
+    <Content Include="Raven\assets\css\fonts\line-awesome\la-solid-900.woff2" />
+    <Content Include="Raven\assets\css\fonts\socicon\socicon.eot" />
+    <Content Include="Raven\assets\css\fonts\socicon\socicon.ttf" />
+    <Content Include="Raven\assets\css\fonts\socicon\socicon.woff" />
+    <Content Include="Raven\assets\css\fonts\summernote\summernote.eot" />
+    <Content Include="Raven\assets\css\fonts\summernote\summernote.ttf" />
+    <Content Include="Raven\assets\css\fonts\summernote\summernote.woff" />
+    <Content Include="Raven\assets\css\fonts\summernote\summernote.woff2" />
+    <Content Include="Layout.Master" />
+    <Content Include="assets\language.json" />
+    <Content Include="assets\fonts\flaticon_realton.eot" />
+    <Content Include="assets\fonts\flaticon_realton.ttf" />
+    <Content Include="assets\fonts\flaticon_realton.woff" />
+    <Content Include="assets\fonts\flaticon_realton.woff2" />
+    <Content Include="assets\fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\webfonts\fa-duotone-900.ttf" />
+    <Content Include="assets\fonts\webfonts\fa-duotone-900.woff" />
+    <Content Include="assets\fonts\webfonts\fa-duotone-900.woff2" />
+    <Content Include="assets\fonts\webfonts\fa-light-300.ttf" />
+    <Content Include="assets\fonts\webfonts\fa-light-300.woff" />
+    <Content Include="assets\fonts\webfonts\fa-light-300.woff2" />
+    <Content Include="assets\fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\webfonts\fa-thin-100.ttf" />
+    <Content Include="assets\fonts\webfonts\fa-thin-100.woff" />
+    <Content Include="assets\fonts\webfonts\fa-thin-100.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Raven\assets\js\widgets.js" />
+    <Content Include="Raven\assets\panel-lang.json" />
+    <Content Include="Partner\Page.Master" />
+    <Content Include="uploads\reports\administrative-daily-report.docx" />
+    <Content Include="uploads\reports\customer-service-daily-report.docx" />
+    <Content Include="uploads\reports\paralegal-daily-report.docx" />
+    <Content Include="uploads\reports\sales-report.docx" />
+    <Content Include="Raven\assets\vendors\app.calback.js" />
+    <Content Include="uploads\files\example-leads.xlsx" />
+    <Content Include="uploads\files\project-form.docx" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bll\Bll.csproj">
+      <Project>{dcf4cfd8-0eff-4e6c-a23e-3e049a7e0081}</Project>
+      <Name>Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{08623422-7d8e-4d40-8726-3f157ae0397a}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{0b660329-8764-4b60-97d9-14d05f2a7d3f}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{fecf7695-aeec-4a8c-98a7-467252457bd6}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploads\agencies\" />
+    <Folder Include="uploads\editor\" />
+    <Folder Include="uploads\images\" />
+    <Folder Include="uploads\logs\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60378</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44386/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

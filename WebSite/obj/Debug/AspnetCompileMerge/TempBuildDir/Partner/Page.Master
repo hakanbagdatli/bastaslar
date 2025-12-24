@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.Master.cs" Inherits="WebSite.Partner.Page" %>
+<%@ Register Src="~/Partner/Shared/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Import Namespace="Tools" %>
+<%@ Import Namespace="Utility" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="/raven/assets/media/favicon.png" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link href="/raven/assets/css/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/raven/assets/css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/raven/assets/css/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/raven/assets/css/datatables.bundle.css" rel="stylesheet" />
+    <link href="/raven/assets/css/fancybox.css" rel="stylesheet" />
+    <link href="/raven/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/raven/assets/css/sumoselect.min.css" rel="stylesheet" />
+    <style>
+        @media (max-width: 991.98px) {
+            .header-mobile-fixed .wrapper {
+                padding-top: 0 !important;
+            }
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body id="kt_body" class="header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-secondary-enabled page-loading">
+    <form id="form1" runat="server">
+
+        <asp:HiddenField ID="hdnMenuID" runat="server" />
+        <asp:HiddenField ID="hdnPageType" runat="server" Value="0" />
+
+        <!-- mainArea -->
+        <div class="d-flex flex-column flex-root">
+            <div class="d-flex flex-row flex-column-fluid page">
+                <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper" style="padding-left: 0 !important;">
+                    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+                        <!-- subheader -->
+                        <uc1:Header runat="server" ID="Header" />
+
+                        <!-- pageContent -->
+                        <div class="pt-5 mt-5 d-flex flex-column-fluid">
+                            <asp:ContentPlaceHolder ID="pagecontent" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+
+                    </div>
+
+                    <!-- footer -->
+                    <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+                        <!--begin::Container-->
+                        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+                            <div class="text-dark order-2 order-md-1">
+                                <span class="text-muted font-weight-bold mr-2">2025 ©</span>
+                                <a href="https://sunvalleycyprus.com/" target="_blank" class="text-dark-75 text-hover-primary"><%= Entities.StaticList.Settings.CompanyName %></a>
+                            </div>
+                            <div class="nav nav-dark order-1 order-md-2">
+                                <a href="https://sunvalleycyprus.com/what-is-sun-valley-" target="_blank" class="nav-link pr-3 pl-0">About</a>   
+                                <a href="https://sunvalleycyprus.com/contact-us/" target="_blank" class="nav-link pl-3 pr-0">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- scrollTop -->
+        <div id="kt_scrolltop" class="scrolltop">
+            <span class="svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
+                        <path d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z" fill="#000000" fill-rule="nonzero" />
+                    </g>
+                </svg>
+            </span>
+        </div>
+
+        <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#1BC5BD", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#6993FF", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#1BC5BD", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#E1E9FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
+        <script src="/raven/assets/js/plugins.bundle.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/prismjs.bundle.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/scripts.bundle.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/fullcalendar.bundle.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/fancybox.js?v=<%= Feature.Version %>"></script>
+        <!--<script src="/raven/assets/js/session-timeout.js?v=<%= Feature.Version %>"></script>-->
+        <script src="/raven/assets/js/datatables.bundle.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/summernote-cleaner.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/summernote.init.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/js/jquery.sumoselect.min.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/vendors/app.global.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/vendors/app.save.js?v=<%= Feature.Version %>"></script>
+        <script src="/raven/assets/vendors/app.delete.js?v=<%= Feature.Version %>"></script>
+        <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+
+    </form>
+
+</body>
+</html>

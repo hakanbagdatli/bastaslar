@@ -1,0 +1,43 @@
+﻿.bg-shape-1 {
+    background-color: #BD9A68;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-image: url(../media/patterns/aare.png);
+}
+
+.file-wrap .list-wrap {
+    gap: 24px;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+    .file-wrap .list-wrap li a {
+        border-radius: 8px;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding: 15px 20px;
+        border: 1.5px dashed #181C32;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--tg-secondary-color);
+        flex-direction: row;
+        align-content: center;
+    }
+
+        .file-wrap .list-wrap li a img {
+            width: 40px;
+            display: block;
+            margin-right: 10px;
+        }
+
+.form-group label {
+    font-weight: 700;
+}

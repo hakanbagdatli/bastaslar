@@ -1,0 +1,297 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="WebSite.Layout" %>
+<%@ Import Namespace="Entities" %>
+<%@ Import Namespace="Utility" %>
+<%@ Import Namespace="Tools" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="MobileOptimized" content="320" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="author" content="Liophin Software" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://<%= Request.ServerVariables["SERVER_NAME"] + Request.RawUrl.ToString() %>" />
+    <meta property="og:url" content="https://<%= Request.ServerVariables["SERVER_NAME"] + Request.RawUrl.ToString() %>" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:type" content="website" />
+    <asp:Literal ID="lblOgTitle" runat="server"></asp:Literal>
+    <asp:Literal ID="lblOgDescription" runat="server"></asp:Literal>
+    <asp:Literal ID="lblOgImage" runat="server"></asp:Literal>
+    <asp:Literal ID="lblDescription" runat="server"></asp:Literal>
+    <asp:Literal ID="lblKeywords" runat="server"></asp:Literal>
+    <asp:Literal ID="lblGoogleVerificationCode" runat="server"></asp:Literal>
+    <asp:Literal ID="lblGoogleAnalyticsCode" runat="server"></asp:Literal>
+    <asp:Literal ID="lblGeoTags" runat="server"></asp:Literal>
+    <asp:Literal ID="lblFavicon" runat="server"></asp:Literal>
+    <asp:Literal ID="lblAdditionalMetaTags" runat="server"></asp:Literal>
+    <asp:Literal ID="lblAlternate" runat="server"></asp:Literal>
+    <asp:Literal ID="lblTagManager" runat="server"></asp:Literal>
+    <!-- Page needs ================================================== -->
+    <link rel="stylesheet" href="/assets/css/sunvalley.css" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PXLGHN6V');</script>
+    <!-- End Google Tag Manager -->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>                                                            
+<body>
+    <div class="wrapper ovh">
+        <form id="form1" runat="server">
+            <div class="preloader"></div>
+
+            <!-- header -->
+            <header class="header-nav nav-innerpage-style menu-home10 main-menu">
+                <nav class="posr">
+                    <div class="container maxw1600 posr menu_bdrt1">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="logos mr40 mr10-lg">
+                                        <a href="<%= Handler.GetLanguageMain() %>" title="<%= StaticList.Settings.CompanyName %>" class="header-logo logo1">
+                                            <img src="<%= Feature.ImageFolder + StaticList.Settings.SiteLogo %>" alt="<%= StaticList.Settings.CompanyName %> Logo" style="max-width: 150px;"></a>
+                                    </div>
+                                    <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
+                                        <% foreach (var item in StaticList.Categories.Where(x => (x.CatID == 0) && (x.isTopMenu == 1) && (x.Approved == 1))) {
+                                            int MenuID = item.id; %>
+                                        <li <%= item._SubCategoryCount > 0 ? "class='visible_list'" : "" %>>
+                                            <a href="<%= Handler.SetMetaURL(item.PageTypeID, item.id, false) %>" title="<%= Handler.SetText(item.Title, item._Title) %>" target="<%= item.OpeningType %>">
+                                                <span class="title"><%= Handler.SetText(item.Title, item._Title) %></span>
+                                                <% if (item._SubCategoryCount > 0) { %>
+                                                <ul>
+                                                    <% foreach (var sub in StaticList.Categories.Where(x => (x.CatID == MenuID) && (x.isTopMenu == 1) && (x.Approved == 1))) { %>
+                                                    <li><a href="<%= Handler.SetMetaURL(sub.PageTypeID, sub.id, false) %>" title="<%= Handler.SetText(sub.Title, sub._Title) %>">
+                                                        <%= Handler.SetText(sub.Title, sub._Title) %></a></li>
+                                                    <% } %>
+                                                </ul>
+                                                <% } %>
+                                            </a>
+                                        </li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <ul class="language-navigation-menu">
+                                        <li class="navigation-item">
+                                            <a href="#" title="<%= Language.GetSite(22) %>" class="language navigation-link" >
+                                                <span class="d-lg-none d-xxl-block">
+                                                    <img src="/assets/images/flags/<%= StaticList.LanguageCodes.Where(x => x.id == Convert.ToInt32(Feature.ActiveLanguage)).ToList()[0].Code %>.png" alt="Language" class="language-flag" />
+                                                </span>
+                                                <span class="d-block d-sm-none">Language</span>
+                                            </a>
+                                            <ul class="language-navigation-dropdown">
+                                                <% foreach (var item in StaticList.LanguageCodes.Where(x => x.id != Convert.ToInt32(Feature.ActiveLanguage))) { %>
+                                                <li class="navigation-dropdown-item">
+                                                    <a href="javascript:;" title="<%= item.Title %>" data-language="<%= item.Code %>" data-id="<%= item.id %>" class="btn-language navigation-dropdown-link"><%=item.Title %></a>
+                                                </li>
+                                                <% } %>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <a href="<%= StaticList.Settings.BookNowLink %>" title="<%= Language.GetSite(1) %>" target="_blank" class="ud-btn btn-white add-property bdrs12 mx-2 mx-xl-4">
+                                        <%= Language.GetSite(1) %><i class="fal fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- mobileNav -->
+            <div id="page" class="mobilie_header_nav stylehome1">
+                <div class="mobile-menu">
+                    <div class="header innerpage-style">
+                        <div class="menu_and_widgets">
+                            <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
+                                <a href="#menu" title="Mobile Navigation" class="menubar">
+                                    <img src="/assets/images/mobile-dark-nav-icon.svg" alt="Mobile Navigation">
+                                </a>
+                                <a href="/" title="<%= StaticList.Settings.CompanyName %>" class="mobile_logo">
+                                    <img src="<%= Feature.ImageFolder + StaticList.Settings.SiteLogo %>" alt="<%= StaticList.Settings.CompanyName %> Logo">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav id="menu" class="">
+                    <ul>
+                        <% foreach (var item in StaticList.Categories.Where(x => (x.CatID == 0) && (x.isTopMenu == 1) && (x.Approved == 1))) {
+                            int MenuID = item.id; %>
+                        <li>
+                            <% if (item._SubCategoryCount > 0) { %>
+                            <span><%= Handler.SetText(item.Title, item._Title) %></span>
+                            <ul>
+                                <% foreach (var sub in StaticList.Categories.Where(x => (x.CatID == MenuID) && (x.isTopMenu == 1) && (x.Approved == 1))) { %>
+                                <li><a href="<%= Handler.SetMetaURL(sub.PageTypeID, sub.id, false) %>" title="<%= Handler.SetText(sub.Title, sub._Title) %>">
+                                    <%= Handler.SetText(sub.Title, sub._Title) %></a></li>
+                                <% } %>
+                            </ul>
+                            <% } else { %>
+                            <a href="<%= Handler.SetMetaURL(item.PageTypeID, item.id, false) %>" title="<%= Handler.SetText(item.Title, item._Title) %>">
+                                <%= Handler.SetText(item.Title, item._Title) %></a>
+                            <% } %>
+                        </li>
+                        <% } %>
+                        <li style="background: #febe2a;"><a href="<%= StaticList.Settings.BookNowLink %>" title="<%= Language.GetSite(1) %>" target="_blank"><%= Language.GetSite(1) %></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- content -->
+            <div class="body_content">
+
+                <asp:ContentPlaceHolder ID="pagecontent" runat="server"></asp:ContentPlaceHolder>
+
+                <!-- footer -->
+                <section class="footer-style1 pt60 pb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="footer-widget mb-4 mb-lg-5">
+                                    <a href="<%= Handler.GetLanguageMain() %>" title="<%= StaticList.Settings.CompanyName %>" class="footer-logo">
+                                        <img src="<%= Feature.ImageFolder + StaticList.Settings.FooterLogo %>" alt="<%= StaticList.Settings.CompanyName %> Logo"  class="mb40"  style="max-width: 150px;">
+                                    </a>
+                                    <% foreach (var item in StaticList.Contact) { %>
+                                    <div class="app-widget">
+                                        <h5 class="title text-white mb10">Phone</h5>
+                                        <p class="info-title"><%= item.Phone %> <%= Language.GetSite(2) %></p>
+                                        <p class="info-title"><%= item.Gsm %> <%= Language.GetSite(3) %></p>
+                                    </div>
+                                    <div class="app-widget">
+                                        <h5 class="title text-white mb10">E-Mail</h5>
+                                        <p class="info-title"><%= item.Email %> <%= Language.GetSite(2) %></p>
+                                        <p class="info-title"><%= item.Email2 %> <%= Language.GetSite(3) %></p>
+                                    </div>
+                                    <div class="app-widget">
+                                        <h5 class="title text-white mb10">Address</h5>
+                                        <p class="info-title"><%= item.Address %></p>
+                                    </div>
+                                    <% } %>
+                                    <div class="social-widget mt35">
+                                        <h6 class="text-white mb20"><%= Language.GetSite(4) %></h6>
+                                        <div class="social-style1">
+                                            <a href="<%= StaticList.Settings.FacebookAddress %>" title="Facebook" target="_blank"><i class="fab fa-facebook-f list-inline-item"></i></a>
+                                            <a href="<%= StaticList.Settings.InstagramAddress %>" title="Instagram" target="_blank"><i class="fab fa-instagram list-inline-item"></i></a>
+                                            <a href="<%= StaticList.Settings.YouTubeAddress %>" title="YouTube" target="_blank"><i class="fab fa-youtube list-inline-item"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="footer-widget mb-4 mb-lg-5">
+                                    <div class="mailchimp-widget mb-4 mb-lg-5">
+                                        <h6 class="title text-white mb20"><%= Language.GetSite(5) %></h6>
+                                        <div class="mailchimp-style1">
+                                            <input type="email" id="Email" data-field="Email" class="form-control news-form-data" placeholder="<%= Language.GetSite(6) %>" required />
+                                            <a href="javascript:;" title="<%= Language.GetSite(7) %>" data-prefix="news" data-formid="2" class="button btn-send-data"><%= Language.GetSite(7) %></a>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-between">
+                                        <div class="col-auto">
+                                            <div class="link-style1 mb-3">
+                                                <h6 class="text-white mb25"><%= Language.GetSite(8) %></h6>
+                                                <div class="link-list">
+                                                    <% foreach (var item in StaticList.Categories.Where(x => (x.isBottomMenu == 1) && (x.isTopMenu == 1) && (x.Approved == 1)).OrderByDescending(x => x.CatID).Take(5)) { %>
+                                                        <a href="<%= Handler.SetMetaURL(item.PageTypeID, item.id, false) %>" title="<%= Handler.SetText(item.Title, item._Title) %>" target="<%= item.OpeningType %>">
+                                                            <%= Handler.SetText(item.Title, item._Title) %></a>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="link-style1 mb-3">
+                                                <h6 class="text-white mb25"><%= Language.GetSite(9) %></h6>
+                                                <ul class="ps-0">
+                                                    <% foreach (var item in StaticList.Categories.Where(x => (x.CatID == 7) && (x.Approved == 1)).Take(5)) { %>
+                                                        <li><a href="<%= Handler.SetMetaURL(item.CatID, item.id, true) %>" title="<%= Handler.SetText(item.Title, item._Title) %>">
+                                                            <%= Handler.SetText(item.Title, item._Title) %></a><li>
+                                                    <% } %>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="link-style1 mb-3">
+                                                <h6 class="text-white mb25"><%= Language.GetSite(10) %></h6>
+                                                <ul class="ps-0">
+                                                    <% foreach (var item in StaticList.Categories.Where(x => (x.CatID == 5) && (x.Approved == 1)).Take(5)) { %>
+                                                        <li><a href="<%= Handler.SetMetaURL(item.CatID, item.id, true) %>" title="<%= Handler.SetText(item.Title, item._Title) %>">
+                                                            <%= Handler.SetText(item.Title, item._Title) %></a><li>
+                                                    <% } %>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container white-bdrt1 py-4">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="text-center text-lg-start">
+                                    <p class="copyright-text text-gray ff-heading">© Sun Valley Cyprus - All rights reserved</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-center text-lg-end">
+                                    <p class="footer-menu ff-heading text-gray">
+                                        <a class="text-gray" href="#" title="Privacy Policy">Privacy Policy</a>
+                                        <a class="text-gray" href="#" title="Cookies">Cookies</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <a href="#" title="<%= Language.GetSite(11) %>" class="scrollToHome"><i class="fas fa-angle-up"></i></a>
+
+            </div>
+
+            <script src="/assets/js/jquery-3.6.4.min.js"></script>
+            <script src="/assets/js/jquery-migrate-3.0.0.min.js"></script>
+            <script src="/assets/js/popper.min.js"></script>
+            <script src="/assets/js/bootstrap.min.js"></script>
+            <script src="/assets/js/bootstrap-select.min.js"></script>
+            <script src="/assets/js/jquery.mmenu.all.js"></script>
+            <script src="/assets/js/ace-responsive-menu.js"></script>
+            <script src="/assets/js/jquery-scrolltofixed-min.js"></script>
+            <script src="/assets/js/wow.min.js"></script>
+            <script src="/assets/js/owl.js"></script>
+            <script src="/assets/js/parallax.js"></script>
+            <script src="/assets/js/isotop.js"></script>
+            <script src="/assets/js/scrollbalance.js"></script>
+            <script src="/assets/js/script.js"></script>
+            <script defer src="/assets/vendor/sweetalert.min.js?v=<%=Feature.Version %>"></script>
+            <script defer src="/assets/vendor/app.js?v=<%=Feature.Version %>"></script>
+            <script defer src="/assets/vendor/app.forms.js?v=<%=Feature.Version %>"></script>
+            <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+            <asp:HiddenField ID="hdnID" runat="server" Value="0" />
+            <asp:HiddenField ID="hdnCatID" runat="server" Value="0" />
+            <% if (Convert.ToBoolean(StaticList.Settings.hasPopup)) { %>
+            <script src="/assets/vendor/app.popup.js?v=<%=Feature.Version %>"></script>
+            <div id="popupModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="popupModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered-popup" role="document">
+                    <div class="modal-content">
+                        <a href="javascript:void(0)" class="close" data-dismiss="modal"></a>
+                        <img src="<%= Feature.ImageFolder + StaticList.Settings.PopupImage %>" alt="<%= StaticList.Settings.CompanyName %>" style="width: 100%;" />
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXLGHN6V"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+
+        </form>
+    </div>
+</body>
+</html>

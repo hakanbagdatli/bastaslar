@@ -1,0 +1,62 @@
+﻿[
+  {
+    "ID": "1",
+    "TR": "Tebrikler",
+    "EN": "Congratulations"
+  },
+  {
+    "ID": "2",
+    "TR": "Uyarı",
+    "EN": "Warning"
+  },
+  {
+    "ID": "3",
+    "TR": "Hata",
+    "EN": "Error"
+  },
+  {
+    "ID": "4",
+    "TR": "Lütfen tüm alanları eksiksiz giriniz.",
+    "EN": "Please enter all fields completely"
+  },
+  {
+    "ID": "5",
+    "TR": "Lütfen kişisel verilerin korunması kanunu ile ilgili bilgileri okuyun ve kabul edin.",
+    "EN": "Please read and accept the information about personal data protection law."
+  },
+  {
+    "ID": "6",
+    "TR": "Talebiniz alınmıştır. Personelimiz en kısa sürede sizinle iletişime geçecektir.",
+    "EN": "Your request has been received. Our staff will contact you as soon as possible."
+  },
+  {
+    "ID": "7",
+    "TR": "Günde yalnızca bir form gönderebilirsiniz. Bir hata olduğunu düşünüyorsanız e-posta yoluyla bizimle iletişime geçebilirsiniz.",
+    "EN": "You can only submit one form per day. If you think there is an error, you can contact us via e-mail."
+  },
+  {
+    "ID": "8",
+    "TR": "Form gönderiliyor",
+    "EN": "Being sent"
+  },
+  {
+    "ID": "9",
+    "TR": "Bilgileriniz işleniyor lütfen bekleyiniz...",
+    "EN": "Your information is being processed, please wait..."
+  },
+  {
+    "ID": "10",
+    "TR": "Giriş Başarılı",
+    "EN": "Login is succeed"
+  },
+  {
+    "ID": "11",
+    "TR": "Lütfen kullanıcı girişi yapınız.",
+    "EN": "Please log in."
+  },
+  {
+    "ID": "12",
+    "TR": "Lütfen kullanım koşulları ve gizlilik politikasını kabul ediniz.",
+    "EN": "Please accept the terms of use and privacy policy."
+  }
+]

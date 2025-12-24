@@ -1,0 +1,14 @@
+﻿@import url("bootstrap.min.css");
+@import url("jquery-ui.min.css");
+@import url("ace-responsive-menu.css");
+@import url("menu.css");
+@import url("fontawesome.css");
+@import url("flaticon.css");
+@import url("bootstrap-select.min.css");
+@import url("animate.css");
+@import url("slider.css");
+@import url("ud-custom-spacing.css");
+@import url("magnific-popup.css");
+@import url("style.css");
+
+.features-list ul{position:relative;margin-bottom:20px}.features-list ul li{position:relative;list-style:circle;float:left;width:25%;font-size:14px;line-height:28px;color:#444;font-weight:400;cursor:default;-webkit-transition:.3s;-moz-transition:.3s;-ms-transition:.3s;-o-transition:.3s;transition:.3s}.feature-style1 img{min-height:360px;min-width:400px}.sp-img-content .preview-img{height:180px}.mobile_logo img{height:40px}.language-navigation-menu{margin:0;padding:0}.language-navigation-menu>li:hover>ul{display:flex}.language-navigation-menu .language-navigation-dropdown{display:none;flex-direction:column;align-content:center;justify-content:center;align-items:start;position:absolute;padding:15px 10px;margin:0 -10px;z-index:9999;width:100px;background-color:#fff;border-radius:12px;-webkit-box-shadow:0 10px 40px rgba(24,26,32,.05);-moz-box-shadow:0 10px 40px rgba(24,26,32,.05);-o-box-shadow:0 10px 40px rgba(24,26,32,.05);box-shadow:0 10px 40px rgba(24,26,32,.05)}.language-navigation-menu .language-flag{width:36px;border-radius:5px}@media (max-width:600px){.language-navigation-menu .language-flag{width:30px;margin:-4px 0 0}}

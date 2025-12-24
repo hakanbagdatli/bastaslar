@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08623422-7D8E-4D40-8726-3F157AE0397A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Adwords.cs" />
+    <Compile Include="Domain\AgencyCallbacks.cs" />
+    <Compile Include="Domain\Agencies.cs" />
+    <Compile Include="Domain\Attendees.cs" />
+    <Compile Include="Domain\CustomerFiles.cs" />
+    <Compile Include="Domain\Customers.cs" />
+    <Compile Include="Domain\DailyReports.cs" />
+    <Compile Include="Domain\FormCategories.cs" />
+    <Compile Include="Domain\FormIncomings.cs" />
+    <Compile Include="Domain\GeneralCategories.cs" />
+    <Compile Include="Domain\GeneralContacts.cs" />
+    <Compile Include="Domain\GeneralFeatures.cs" />
+    <Compile Include="Domain\GeneralFiles.cs" />
+    <Compile Include="Domain\GeneralPhotos.cs" />
+    <Compile Include="Domain\GeneralPlans.cs" />
+    <Compile Include="Domain\GeneralRecords.cs" />
+    <Compile Include="Domain\GeneralVideos.cs" />
+    <Compile Include="Domain\InspectionLeads.cs" />
+    <Compile Include="Domain\Inspections.cs" />
+    <Compile Include="Domain\InspectionSummaries.cs" />
+    <Compile Include="Domain\LangCategories.cs" />
+    <Compile Include="Domain\LangFixed.cs" />
+    <Compile Include="Domain\LangRecords.cs" />
+    <Compile Include="Domain\LogRecords.cs" />
+    <Compile Include="Domain\ProjectStatus.cs" />
+    <Compile Include="Domain\ReservationFeatures.cs" />
+    <Compile Include="Domain\ReservationFiles.cs" />
+    <Compile Include="Domain\Reservations.cs" />
+    <Compile Include="Domain\SaleTransactions.cs" />
+    <Compile Include="Domain\SiteSliders.cs" />
+    <Compile Include="Domain\Assignments.cs" />
+    <Compile Include="Domain\zDefineDetails.cs" />
+    <Compile Include="Domain\zDefines.cs" />
+    <Compile Include="Domain\zLangCodes.cs" />
+    <Compile Include="Domain\zLangFixed.cs" />
+    <Compile Include="Domain\zMenus.cs" />
+    <Compile Include="Domain\zPageTypes.cs" />
+    <Compile Include="Domain\zPhotoSettings.cs" />
+    <Compile Include="Domain\zSearchEngineIndex.cs" />
+    <Compile Include="Domain\zSettings.cs" />
+    <Compile Include="Domain\zSortingType.cs" />
+    <Compile Include="Domain\zUsers.cs" />
+    <Compile Include="Domain\zUsersStatu.cs" />
+    <Compile Include="EnumValidate.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="Items\PaymentItems.cs" />
+    <Compile Include="Items\CreditCard.cs" />
+    <Compile Include="Items\DataRequest.cs" />
+    <Compile Include="Items\FileDelete.cs" />
+    <Compile Include="Items\PaymentResult.cs" />
+    <Compile Include="Items\PdfExport.cs" />
+    <Compile Include="Items\SocialNetworkLogin.cs" />
+    <Compile Include="Items\Login.cs" />
+    <Compile Include="Items\ResultMessage.cs" />
+    <Compile Include="Items\SiteForm.cs" />
+    <Compile Include="Items\SiteSearch.cs" />
+    <Compile Include="Items\TokenID.cs" />
+    <Compile Include="Items\UserAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ProjectList.cs" />
+    <Compile Include="Service\ProjectSearch.cs" />
+    <Compile Include="StaticList.cs" />
+    <Compile Include="ValidateAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
